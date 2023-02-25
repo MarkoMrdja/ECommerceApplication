@@ -19,10 +19,10 @@ namespace ECommerceApplication.Shared
 
         public int ProductTypeId { get; set; }
 
-        [Column(TypeName ="deciaml(18,2)")]
+        [Column(TypeName ="decimal(18,2)")]
         public decimal Price { get; set; }
 
-        [Column(TypeName = "deciaml(18,2)")]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal OriginalPrice { get; set; }
     }
 }
