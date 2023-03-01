@@ -2,8 +2,9 @@ global using ECommerceApplication.Shared;
 global using Microsoft.EntityFrameworkCore;
 global using ECommerceApplication.Server.Services.ProductService;
 global using ECommerceApplication.Server.Services.CategoryService;
+global using ECommerceApplication.Server.Services.AuthService;
 using ECommerceApplication.Server.Data;
-
+using ECommerceApplication.Server.Services.CartService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
